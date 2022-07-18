@@ -8,7 +8,7 @@ class Solution:
             elif x % 5 == 0 and x % 3 != 0:
                   result.append("Buzz")
             elif x % 3 ==0 and x % 5 == 0:
-                  result.append("FizzBUzz")
+                  result.append("FizzBuzz")
             else:
                   result.append(str(x))
         return result
