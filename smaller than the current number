@@ -1,0 +1,16 @@
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        count=[]
+        for i in range(len(nums)):
+            temp=0
+            max = nums[i]
+            for j in range(len(nums)-1,-1,-1):
+                if nums[j] < max:
+                    temp+=1
+            # print(temp)
+       
+               
+            
+            count.append(temp)
+        return count 
+    
