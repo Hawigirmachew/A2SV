@@ -1,0 +1,11 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        temp={}
+        sent=""
+        str1=s.split()
+        for i in str1:
+            temp[i[-1]]=i[:-1]
+        for i in sorted(temp):
+            sent=sent+''.join(temp[i])+' '
+        sent=sent[:-1]
+        return sent
