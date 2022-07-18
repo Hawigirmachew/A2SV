@@ -1,0 +1,13 @@
+class Solution:
+    def findOriginalArray(self, changed: List[int]) -> List[int]:
+        out = []
+        if changed == [0]*len(changed):
+            changed = [0]*int(len(changed)/2)
+            return changed
+        for i in range(len(changed)-1):
+            for j in range(i+1,len(changed)):
+                if changed[i]*2 == changed[j]:
+                    out.append(changed[i])
+                # if changed[j]*2 == changed[i]:
+                #     out.append(changed[j]) 
+        return out    
