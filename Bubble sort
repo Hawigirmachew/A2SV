@@ -13,13 +13,16 @@ import sys
 def countSwaps(a):
     
     # Write your code here
-    count = 0
-    for i in range(len(a)):
+   count=0
+   for i in range(len(a)):
+        #  for j in range(len(a)-1,-1,-1):
+        #     if(a[j] > a[j-1]):
+        #         a[j] , a[j-1] = a[j-1],a[j]
+        #         count = count+1
+        # the above code will increase the swap number but gives the correct sort
         for j in range(len(a)-1):
             if(a[j] > a[j+1]):
-                temp = a[j]
-                a[j]=a[j+1]
-                a[j+1]=temp
+                a[j] , a[j+1] = a[j+1],a[j]
                 count = count+1
     print("Array is sorted in "+str(count)+" swaps.")
     print("First Element: "+str(a[0]))
