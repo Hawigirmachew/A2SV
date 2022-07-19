@@ -15,14 +15,25 @@ import sys
 #
 
 def insertionSort1(n, arr):
-   target = arr[-1]
-   idx = n-2
-   while (target < arr[idx]) and (idx >= 0):
-        arr[idx+1] = arr[idx]
-        print(*arr)
-        idx -= 1
-   arr[idx+1]=target
-   print(*arr)
+    # Write your code here
+    # target = arr[-1]
+    # idx = n-2
+    # while (target < arr[idx]) and (idx >= 0):
+    #     arr[idx+1] = arr[idx]
+    #     print(*arr)
+    #     idx -= 1
+    # arr[idx+1]=target
+    # print(*arr)
+
+    for i in range(1,n):
+        j = i
+        t = arr[j]
+        while j > 0 and t < arr[j-1]:
+            arr[j] = arr[j-1]
+            j-=1
+            print(*arr)
+        arr[j] = t
+    print(*arr)
 
 if __name__ == '__main__':
     n = int(input().strip())
