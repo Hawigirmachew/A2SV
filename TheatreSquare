@@ -1,11 +1,11 @@
 import math
 n , m ,a = map(float,input().split())
-if n == 1 and m== 1:
+if n == m and m== a and m == a:
     print(1)
-val1 = math.ceil(n/a)
-val2 = math.ceil(m/a)
-
-print(val1+val2)
+else:
+    val1 = math.ceil(n/a)
+    val2 = math.ceil(m/a)
+    print(val1+val2)
 # if m%a == 0:
 #     val = m//a
 # else:
