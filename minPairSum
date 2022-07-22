@@ -1,0 +1,12 @@
+class Solution:
+    def minPairSum(self, nums: List[int]) -> int:
+        n = len(nums)
+        cust=[]
+        if n % 2==0:
+            for i in range(n-1):
+                for j in range(i+1,n):
+                    if nums[i] == nums[j]:
+                        nums[i+1],nums[j]=nums[j],nums[i+1]
+            cust = [nums[i]+nums[i+1] for i in range(0,n,2)]
+        return max(cust)
+                    
