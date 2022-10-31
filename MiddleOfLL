@@ -1,0 +1,17 @@
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        length = 0
+        start = node = head
+        while start:
+            length +=1
+            start= start.next
+        counter = 0 
+        middle = length //2
+        
+        while node:
+            if counter == middle:
+                return node
+            else:
+                counter +=1
+                node = node.next
+        return None
