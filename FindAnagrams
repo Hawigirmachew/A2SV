@@ -1,0 +1,29 @@
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        
+        anagramS = {}
+        pCount = {}
+        result = []
+        left = 0
+        if len(p) > len(s):
+            return 
+        for i in range(len(p)):
+            anagramS[s[i]] = anagramS.get(s[i] , 0) + 1
+            pCount[p[i]] = pCount.get(p[i], 0) + 1
+        if pCount == anagramS:
+            result.append(0)
+        else:
+            result = []
+        
+        for right in range(len(p),len(s)):
+            anagramS[s[right]] = anagramS.get(s[right],0) +1
+            anagramS[s[left]] -= 1
+            if anagramS[s[left]] == 0:
+                anagramS.pop(s[left])
+            left += 1
+            if anagramS == pCount:
+                result.append(left)
+        return result
+            
+            
+        
