@@ -1,0 +1,28 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        dicts = {}
+        longest,start = 0,0
+        # slow,fast = 0,0
+        for character in range(len(s)):
+            dicts[s[character]] = dicts.get(s[character], 0)+1
+            while dicts[s[character]] > 1:
+                dicts[s[start]] -=1
+                start +=1
+            longest = max(longest, character - start + 1)
+        return longest
+        # while(slow < len(s)):
+        #     # print(slow)
+        #     if s[fast] not in dicts:
+        #         dicts[s[fast]] = dicts.get(s[fast],0)+1
+        #         # print(dicts)
+        #         if fast + 1 >= len(s):
+        #             longest = max(longest, len(dicts))
+        #             return longest
+        #         fast += 1
+        #     else:
+        #         longest = max(longest, len(dicts))
+        #         dicts = {}
+        #         slow += 1
+        #         fast = slow
+        # longest = max(longest, len(dicts))   
+        # return longest
