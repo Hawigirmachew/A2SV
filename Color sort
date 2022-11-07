@@ -3,13 +3,16 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        # for i in range(len(nums)-1,0,-1):
+        #     pos = i
+        #     for j in range(i):
+        #         if nums[j] >= nums[j+1]:
+        #             # pos = j
+        #             nums[j], nums[j+1] = nums[j+1], nums[j]
         for i in range(len(nums)-1):
-            pos = i
-            for j in range(len(nums)):
-                if nums[pos] >nums[j]:
-                    pos = j
-            if pos != i:
-                temp = nums[i]
-                nums[i] = nums[pos]
-                nums[pos] = temp
-        print(nums)
+            for k in range(i, len(nums)):
+                if nums[i] > nums[k]:
+                    nums[i], nums[k] = nums[k], nums[i]
+        return nums
+
+        
